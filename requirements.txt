@@ -25,7 +25,7 @@ hacking==1.1.0
 hiredis==1.0.0
 html5lib==1.0.1
 hyperlink==19.0.0
-herokuify-scrapyd==1.0
+herokuify-scrapyd
 idna==2.7
 importlib-metadata==0.23
 incremental==17.5.0
