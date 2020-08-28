@@ -42,15 +42,11 @@ pickleshare==0.7.5
 Pillow==7.1.2
 pluggy==0.13.1
 prompt-toolkit==3.0.5
-py @ file:///tmp/build/80754af9/py_1593446248552/work
 pyasn1==0.4.8
 pyasn1-modules==0.2.7
-pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
 PyDispatcher==2.0.5
 Pygments==2.6.1
-PyHamcrest @ file:///tmp/build/80754af9/pyhamcrest_1594390921726/work
 pymongo==3.9.0
-pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1594392929924/work
 pyparsing==2.4.7
 pytest==6.0.1
 pytest-runner==5.2
@@ -58,7 +54,6 @@ python-dateutil==2.8.1
 pytz==2020.1
 pywin32==227
 queuelib==1.5.0
-regex @ file:///C:/ci/regex_1596829824428/work
 requests==2.24.0
 Scrapy==1.6.0
 scrapy-cloudflare-middleware==0.0.1
@@ -66,14 +61,11 @@ scrapyd==1.2.1
 scrapyd-client @ git+https://github.com/scrapy/scrapyd-client.git@4d839039ccd7b84997ba3fd533df313701b5ab68
 service-identity==18.1.0
 six==1.15.0
-toml @ file:///tmp/build/80754af9/toml_1592853716807/work
 traitlets==4.3.3
 Twisted==20.3.0
 typed-ast==1.4.1
-typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1598376058250/work
 urllib3==1.25.10
 w3lib==1.21.0
-wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
 wincertstore==0.2
 zipp==3.1.0
 zope.interface==4.7.1
