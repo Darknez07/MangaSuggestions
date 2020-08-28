@@ -2,11 +2,15 @@
 ### This repositry just run "./Ex.sh" in as bash script
 ## Note Please follow the following request for the fresh data
 ## Each day update the data
-1 Go into Manga folder
-2 Go into send
-3 Ucomment two lines written as:
-    a) import subprocess
-    b) subprocess.Popen(['scrapy','crawl','Manganelo','-o','Some.csv']).communicate()[0]
+<ul>
+<li>Go into Manga folder</li>
+<li>Go into Send.py file</li>
+</li>Ucomment two lines written as:</li>
+    <ol>
+    <li><em>import subprocess</em></li>
+    <li><em>subprocess.Popen(['scrapy','crawl','Manganelo','-o','Some.csv']).communicate()[0]</em></li>
+    </ol>
+</ul>
 ## For data you can wait at least 40 sec and press CTRL + C
 ## After this Comment the mentioned lines back
 ### Note Comment the lines back after updation is complete
