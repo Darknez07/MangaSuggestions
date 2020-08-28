@@ -18,6 +18,6 @@
 <h1> Date format input is</h1>
 <p>Month first three (First Capital) letters space and date comma and then years in last two digit</p>
 <em>Example</em><br>
-<strong>Aug 26,19</strong>
+<strong>Aug 26,19</strong><br>
 </strong>Thanks please give me credit if you use it</strong>
 <p>Notification facility is dependent on the running of app</p>
