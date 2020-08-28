@@ -11,13 +11,13 @@
     <li><em>subprocess.Popen(['scrapy','crawl','Manganelo','-o','Some.csv']).communicate()[0]</em></li>
     </ol>
 </ul>
-## For data you can wait at least 40 sec and press CTRL + C
-## After this Comment the mentioned lines back
-### Note Comment the lines back after updation is complete
+<h2>For data you can wait at least 40 sec and press CTRL + C</h2>
+<h3>After this Comment the mentioned lines back</h3>
+<h3>Note Comment the lines back after updation is complete</h3>
 4) For programmers it's fun to play around with the code
-#### Date format input is
-### Month first three (First Capital) letters space and date comma and then years in last two digit
-Example
-Aug 26,19
-### Thanks please give me credit if you use it
-### Notification facility is dependent on the running of app
+<h1> Date format input is</h1>
+<p>Month first three (First Capital) letters space and date comma and then years in last two digit</p>
+<em>Example</em><br>
+<strong>Aug 26,19</strong>
+</strong>Thanks please give me credit if you use it</strong>
+<p>Notification facility is dependent on the running of app</p>
