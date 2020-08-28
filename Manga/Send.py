@@ -1,6 +1,7 @@
 import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import time
 # from email.mime.image import MIMEImage
 # import subprocess
 from sys import argv as cmd
@@ -8,7 +9,7 @@ import pandas as pd
 import  numpy as np
 # subprocess.Popen(['scrapy','crawl','Manganelo','-o','Some.csv']).communicate()[0]
 df = pd.read_csv('Some.csv')
-
+rem = []
 def create_style(link_collect):
     style_link = """<style>"""
     for i in range(len(link_collect)):
@@ -74,6 +75,7 @@ def send_mail(email,Name, Link, Genre,date,rated,chap, imgs):
         server.sendmail(
             sender_email, receiver_email, message.as_string()
         )
+    return "Yes"
 # for i in range(150):
 #     count = 0
 #     if str(pd.to_datetime(df.loc[i,2],format="%b %d,%y")) == str(pd.to_datetime("today").replace(hour=0,minute=0,second=0))[:-7]:
@@ -87,29 +89,51 @@ email = ""
 try:
     email = cmd[1]
     genre = cmd[2]
+    dated = cmd[3] +' '+cmd[4]
 except:
     email = "darknez077@gmail.com"
     genre = "Comedy"
+    dated = pd.to_datetime("today")
+    dated = str(pd.Series(dated).dt.strftime("%b %d,%y").loc[0])
 finally:
+    opt = "No"
     frame = pd.DataFrame(columns=df.columns)
 count = 0
-# print(email)
+if opt[0].upper() == "Y":
+    rem.append(email)
+sent = "No"
 for i in range(df.shape[0]):
     try:
         if genre in df.loc[i,'Genre'].split(','):
             if df.loc[i, 'Genre'] != float('nan'):
-                count+=1
-                frame.loc[count] = df.loc[i, :]
+                if len(dated) > 3:
+                    if df.loc[i, 'Dated Released'] == dated:
+                        count+=1
+                        frame.loc[count] = df.loc[i, :]
+                else:
+                    if df.loc[i, 'Dated Released'][:3] == dated:
+                        count+=1
+                        frame[count] = df.loc[i, :]
     except Exception:
         pass
-        # print(frame)
-indx = np.random.randint(1,frame.shape[0],10)
-send_mail(email,frame.loc[indx,'Name'].reset_index(drop=True),
-      frame.loc[indx, 'Link'].reset_index(drop=True),
-      frame.loc[indx, 'Genre'].reset_index(drop=True),
-      frame.loc[indx, 'Dated Released'].reset_index(drop=True),
-      frame.loc[indx,'Rating'].reset_index(drop=True),
-      frame.loc[indx,'Latest Chapter'].reset_index(drop=True),
-      frame.loc[indx, 'img-link'].reset_index(drop=True))
-print("Check your Email It's minimal line now But more coming soon")
+if frame.shape[0] > 10:
+    indx = np.random.randint(1,frame.shape[0],10)
+    sent = send_mail(email,frame.loc[indx,'Name'].reset_index(drop=True),
+        frame.loc[indx, 'Link'].reset_index(drop=True),
+        frame.loc[indx, 'Genre'].reset_index(drop=True),
+        frame.loc[indx, 'Dated Released'].reset_index(drop=True),
+        frame.loc[indx,'Rating'].reset_index(drop=True),
+        frame.loc[indx,'Latest Chapter'].reset_index(drop=True),
+        frame.loc[indx, 'img-link'].reset_index(drop=True))
+else:
+    sent = send_mail(email, frame.loc[:,'Name'],
+              frame.loc[:, 'Link'],
+              frame.loc[:,'Genre'],
+              frame.loc[:, 'Dated Released'],
+              frame.loc[:, 'Rating'],
+              frame.loc[:, 'Latest Chapter'],
+              frame.loc[:, 'img-link'])
+print("Check your Email")
+print("For manga Suggestion having Genre: {0}, Last Updated on: {1}".format(genre, dated))
+print("Look into spam folder if not found")
 #   df[df['Name'] == 'One Piece'])

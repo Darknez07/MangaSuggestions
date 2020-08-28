@@ -6,4 +6,6 @@ echo -e "Please give your email id"
 read name
 echo -e "Please enter a genre"
 read genre
-python Send.py $name $genre
+echo -e "Please enter a date"
+read date
+python Send.py $name $genre $date
