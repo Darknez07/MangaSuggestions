@@ -6,7 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from sys import argv as cmd
 import pandas as pd
 import  numpy as np
-# print(subprocess.Popen(['scrapy','crawl','Manganelo','-o','Some.csv']).communicate()[0])
+# subprocess.Popen(['scrapy','crawl','Manganelo','-o','Some.csv']).communicate()[0]
 df = pd.read_csv('Some.csv')
 
 def create_style(link_collect):
@@ -86,16 +86,30 @@ def send_mail(email,Name, Link, Genre,date,rated,chap, imgs):
 email = ""
 try:
     email = cmd[1]
+    genre = cmd[2]
 except:
-    email = ""
+    email = "darknez077@gmail.com"
+    genre = "Comedy"
 finally:
-    email="darknez077@gmail.com"
-indx = np.random.randint(40,df.shape[0],10)
-send_mail(email,df.loc[indx,'Name'].reset_index(drop=True),
-      df.loc[indx, 'Link'].reset_index(drop=True),
-      df.loc[indx, 'Genre'].reset_index(drop=True),
-      df.loc[indx, 'Dated Released'].reset_index(drop=True),
-      df.loc[indx,'Rating'].reset_index(drop=True),
-      df.loc[indx,'Latest Chapter'].reset_index(drop=True),
-      df.loc[indx, 'img-link'].reset_index(drop=True))
+    frame = pd.DataFrame(columns=df.columns)
+count = 0
+# print(email)
+for i in range(df.shape[0]):
+    try:
+        if genre in df.loc[i,'Genre'].split(','):
+            if df.loc[i, 'Genre'] != float('nan'):
+                count+=1
+                frame.loc[count] = df.loc[i, :]
+    except Exception:
+        pass
+        # print(frame)
+indx = np.random.randint(1,frame.shape[0],10)
+send_mail(email,frame.loc[indx,'Name'].reset_index(drop=True),
+      frame.loc[indx, 'Link'].reset_index(drop=True),
+      frame.loc[indx, 'Genre'].reset_index(drop=True),
+      frame.loc[indx, 'Dated Released'].reset_index(drop=True),
+      frame.loc[indx,'Rating'].reset_index(drop=True),
+      frame.loc[indx,'Latest Chapter'].reset_index(drop=True),
+      frame.loc[indx, 'img-link'].reset_index(drop=True))
+print("Check your Email It's minimal line now But more coming soon")
 #   df[df['Name'] == 'One Piece'])
