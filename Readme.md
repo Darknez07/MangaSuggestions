@@ -21,3 +21,5 @@
 <strong>Aug 26,19</strong><br>
 </strong>Thanks please give me credit if you use it</strong>
 <p>Notification facility is dependent on the running of app</p>
+<h5> By default date is of current date </h5>
+<h1> Doing the above steps will be necassry</h1>
