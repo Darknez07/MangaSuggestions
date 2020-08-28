@@ -77,7 +77,6 @@ pyparsing==2.3.0
 pyrsistent==0.15.5
 python-dateutil==2.7.5
 pytz==2018.7
-pywin32==227
 PyYAML==5.1.2
 pyzmq==19.0.1
 Quandl==3.4.5
