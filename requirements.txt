@@ -1,0 +1,79 @@
+appdirs==1.4.4
+atomicwrites==1.4.0
+attrs @ file:///tmp/build/80754af9/attrs_1598374659300/work
+Automat==0.8.0
+backcall==0.2.0
+bcrypt @ file:///C:/ci/bcrypt_1597936262193/work
+black==19.10b0
+certifi==2020.6.20
+cffi @ file:///C:/ci/cffi_1598370861361/work
+cfscrape==2.1.1
+chardet==3.0.4
+click==7.1.2
+colorama==0.4.3
+constantly==15.1.0
+cryptography @ file:///C:/ci/cryptography_1598371491688/work
+cssselect==1.1.0
+decorator==4.4.2
+dnspython==1.16.0
+herokuify-scrapyd==1.0
+hyperlink==19.0.0
+idna @ file:///tmp/build/80754af9/idna_1593446292537/work
+importlib-metadata @ file:///C:/ci/importlib-metadata_1593431910144/work
+incremental==17.5.0
+iniconfig @ file:///tmp/build/80754af9/iniconfig_1596827328212/work
+ipython @ file:///C:/ci/ipython_1592330399805/work
+ipython-genutils==0.2.0
+jedi @ file:///C:/ci/jedi_1596472773465/work
+lxml @ file:///C:/ci/lxml_1594821524941/work
+mkl-fft==1.1.0
+mkl-random==1.0.4
+mkl-service==2.3.0
+more-itertools==8.4.0
+mypy-extensions==0.4.3
+numpy @ file:///C:/ci/numpy_and_numpy_base_1596233948451/work
+olefile==0.46
+packaging==20.4
+pandas @ file:///C:/ci/pandas_1596825959733/work
+parsel==1.5.2
+parso==0.7.0
+pathspec==0.7.0
+pickleshare==0.7.5
+Pillow==7.1.2
+pluggy==0.13.1
+prompt-toolkit==3.0.5
+py @ file:///tmp/build/80754af9/py_1593446248552/work
+pyasn1==0.4.8
+pyasn1-modules==0.2.7
+pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+PyDispatcher==2.0.5
+Pygments==2.6.1
+PyHamcrest @ file:///tmp/build/80754af9/pyhamcrest_1594390921726/work
+pymongo==3.9.0
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1594392929924/work
+pyparsing==2.4.7
+pytest==6.0.1
+pytest-runner==5.2
+python-dateutil==2.8.1
+pytz==2020.1
+pywin32==227
+queuelib==1.5.0
+regex @ file:///C:/ci/regex_1596829824428/work
+requests==2.24.0
+Scrapy==1.6.0
+scrapy-cloudflare-middleware==0.0.1
+scrapyd==1.2.1
+scrapyd-client @ git+https://github.com/scrapy/scrapyd-client.git@4d839039ccd7b84997ba3fd533df313701b5ab68
+service-identity==18.1.0
+six==1.15.0
+toml @ file:///tmp/build/80754af9/toml_1592853716807/work
+traitlets==4.3.3
+Twisted==20.3.0
+typed-ast==1.4.1
+typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1598376058250/work
+urllib3==1.25.10
+w3lib==1.21.0
+wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
+wincertstore==0.2
+zipp==3.1.0
+zope.interface==4.7.1
