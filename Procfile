@@ -1,1 +1,1 @@
-web:scrapyd
+web: scrapyd
