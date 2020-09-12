@@ -1,11 +1,8 @@
 #! /bin/bash
 cd Manga
-sudo apt-get install python3-pip python-dev
-pip install scrapy numpy pandas
-echo -e "Please give your email id"
-read name
-echo -e "Please enter a genre"
-read genre
-echo -e "Please enter a date"
-read date
-python Send.py $name $genre $date
+./Runner.sh
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo install crontab
+    Linux.sh
+fi
+schtasks /create /tn Prepare /tr Prepare.py /sc daily /st 08:00 /ed 12/31/2021 /f

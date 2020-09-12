@@ -2,12 +2,12 @@ import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import time
+from ElasticEmailClient import ApiClient,Email
 # from email.mime.image import MIMEImage
-# import subprocess
 from sys import argv as cmd
 import pandas as pd
 import  numpy as np
-# subprocess.Popen(['scrapy','crawl','Manganelo','-o','Some.csv']).communicate()[0]
+
 df = pd.read_csv('Some.csv')
 rem = []
 def create_style(link_collect):
@@ -39,11 +39,11 @@ def CreateMessage(links, names, genres,dates,ratings, lastchaps, imgs):
     return html
 
 def send_mail(email,Name, Link, Genre,date,rated,chap, imgs):
+    ApiClient.apiKey = '''0D74D7A678FE5F9A690BF6D10ADA5213A29C1B3E25AC8B422493768E564986683946C3E3EE14D159DFA4DAC07FFDA805'''
     sender_email = "rishikakkar42@gmail.com"
     receiver_email = email
     # print(receiver_email)
-    password = "9997201D8C7D66D74C9EB1606C02EB87F91B"
-
+    password = "F88EE0111FD11D1BC382F085C18B24DF9407"
     message = MIMEMultipart("alternative")
     message["Subject"] = "Manga Suggestion By Rishi Kakkar"
     message["From"] = sender_email
@@ -57,6 +57,8 @@ def send_mail(email,Name, Link, Genre,date,rated,chap, imgs):
     text ="""This may not work"""
     html+= CreateMessage(Link,Name,Genre,date,rated, chap,imgs)
     html+="""</body></html>"""
+    x = Email.Send(subject='First',bodyHtml=html,to=email,EEfrom=sender_email)
+    # print(Email.GetStatus(x['transactionid'],showFailed=True,showSent=True))
     # Turn these into plain/html MIMEText objects
     part1 = MIMEText(text, "plain")
     part2 = MIMEText(html, "html")
@@ -87,14 +89,19 @@ def send_mail(email,Name, Link, Genre,date,rated,chap, imgs):
     # break
 email = ""
 try:
-    email = cmd[1]
-    genre = cmd[2]
-    dated = cmd[3] +' '+cmd[4]
-except:
-    email = "darknez077@gmail.com"
-    genre = "Comedy"
-    dated = pd.to_datetime("today")
-    dated = str(pd.Series(dated).dt.strftime("%b %d,%y").loc[0])
+    try:
+        email = cmd[1]
+    except:
+        email = "darknez077@gmail.com"
+    try:
+        genre = cmd[2]
+    except:
+        genre = "Comedy"
+    try:
+        dated = cmd[3] +' '+cmd[4]
+    except:
+        dated = pd.to_datetime("today")
+        dated = str(pd.Series(dated).dt.strftime("%b %d,%y").loc[0])
 finally:
     opt = "No"
     frame = pd.DataFrame(columns=df.columns)
