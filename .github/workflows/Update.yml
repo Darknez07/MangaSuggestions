@@ -1,7 +1,7 @@
 name: Check shuttle
 on:
   schedule:
-    - cron: "55 18 * * *" 
+    - cron: "35 19 * * *" 
 defaults:
  run:
   working-directory: Manga
@@ -27,3 +27,21 @@ jobs:
       - name: Run Something
         run: |
           scrapy crawl Manganelo -o Last.csv
+      - name: Commit files
+        id: commit
+        run: |
+          git config --local user.email "rishikakkar42@gmail.com"
+          git config --local user.name "Darknez07"
+          git add --all
+          if [-z "$(git status --porcelain)"]; then
+             echo "::set-output name=push::false"
+          else
+             git commit -m "Add changes" -a
+             echo "::set-output name=push::true"
+          fi
+        shell: bash
+      - name: Push changes
+        if: steps.commit.outputs.push == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+           github_token: ${{ secrets.GITHUB_TOKEN }}
