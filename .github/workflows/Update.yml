@@ -1,7 +1,7 @@
 name: Check shuttle
 on:
   schedule:
-    - cron: "55 18 * *" 
+    - cron: "55 18 * * *" 
 defaults:
  run:
   working-directory: Manga
