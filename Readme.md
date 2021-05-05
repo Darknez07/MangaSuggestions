@@ -11,3 +11,4 @@
 <p>Notification facility is dependent on the running of app</p>
 <h5> By default date is of current date </h5>
 //TODO: API Publish
+<h3>Note: Automatic updates the new dataset every day</h3>
